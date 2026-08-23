@@ -2,6 +2,8 @@
 
 **Your past is still playing.**
 
+**[ebeeries.github.io/hearlogue](https://ebeeries.github.io/hearlogue/)** · [Download for Windows](https://github.com/ebeeries/hearlogue/releases/latest)
+
 HEARLOGUE turns a Spotify Extended Streaming History export into a private,
 local-first archive of your musical life — and then helps you find your way back
 into it.
