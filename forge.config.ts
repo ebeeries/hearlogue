@@ -29,6 +29,8 @@ const config: ForgeConfig = {
       /^\/tests/,
       /^\/docs/,
       /^\/scripts/,
+      // The landing page is deployed to GitHub Pages, not shipped in the app.
+      /^\/site/,
       /^\/\.vscode/,
       /^\/\.github/,
       /^\/\.gitignore$/,
