@@ -133,6 +133,14 @@
 
       img {
         max-width: 100%;
+        /*
+         * Required, not cosmetic. Every image carries width/height attributes
+         * so the browser can reserve its box before the bytes arrive, and those
+         * attributes apply as presentational hints. `max-width` then constrains
+         * the width alone, leaving the intrinsic height in force and squashing
+         * the picture. `height: auto` restores the real aspect ratio.
+         */
+        height: auto;
         display: block;
       }
 
