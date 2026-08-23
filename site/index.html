@@ -496,46 +496,57 @@
         color: var(--plum);
       }
 
-      /* --------------------------- alternating rows ----------------------- */
+      /* ------------------------------ deep dives -------------------------- */
 
-      .feature-row {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-        gap: 64px;
-        align-items: center;
-        padding: 84px 0;
+      /*
+       * The copy sits above the screenshot rather than beside it. These are
+       * shots of a real 1180px application window: scaled into a half-width
+       * column its 13px interface text lands at about 6px and turns to mush,
+       * while across the full shell it stays close to its natural size.
+       */
+      .feature {
+        padding: 88px 0;
       }
-      .feature-row + .feature-row {
+      .feature + .feature {
         border-top: 1px solid var(--line);
       }
-      .feature-row.reverse .feature-copy {
-        order: 2;
+      .feature-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        gap: 56px;
+        align-items: start;
+      }
+      .feature .shot {
+        margin-top: 46px;
       }
       @media (max-width: 900px) {
-        .feature-row {
-          grid-template-columns: 1fr;
-          gap: 36px;
-          padding: 60px 0;
+        .feature {
+          padding: 62px 0;
         }
-        .feature-row.reverse .feature-copy {
-          order: 0;
+        .feature-head {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .feature .shot {
+          margin-top: 32px;
         }
       }
+      }
 
-      .feature-copy h3 {
+      .feature-title h3 {
         font-size: clamp(24px, 3.4vw, 31px);
         line-height: 1.2;
         margin-top: 14px;
       }
-      .feature-copy p {
-        margin-top: 16px;
+      .feature-body p {
+        margin-top: 0;
         font-size: 15.5px;
         line-height: 1.68;
         color: var(--paper-400);
       }
 
       .feature-list {
-        margin: 22px 0 0;
+        margin: 20px 0 0;
         padding: 0;
         list-style: none;
         display: flex;
@@ -905,8 +916,8 @@
         <div class="hero-shot shot">
           <img
             src="./screens/01-archive.png"
-            width="1440"
-            height="940"
+            width="2880"
+            height="1880"
             alt="The HEARLOGUE Archive screen, showing a forgotten track resurfaced alongside lifetime listening statistics."
           />
         </div>
@@ -1007,82 +1018,89 @@
     <!-- --------------------------- deep dives ---------------------------- -->
     <section class="band-tight">
       <div class="shell">
-        <div class="feature-row">
-          <div class="feature-copy reveal">
-            <p class="eyebrow">Lost Favorites</p>
-            <h3>Songs that mattered, and then went quiet.</h3>
-            <p>
-              A track played twice in 2014 is not a lost favorite — it is a track you never liked.
-              Four gates decide what qualifies before anything is scored at all.
-            </p>
-            <ul class="feature-list">
+        <article class="feature">
+          <div class="feature-head reveal">
+            <div class="feature-title">
+              <p class="eyebrow">Lost Favorites</p>
+              <h3>Songs that mattered, and then went quiet.</h3>
+            </div>
+            <div class="feature-body">
+              <p>
+                A track played twice in 2014 is not a lost favorite — it is a track you never liked. Four gates decide what qualifies before anything is scored at all.
+              </p>
+              <ul class="feature-list">
               <li>Weighs affinity, dormancy, peak intensity, engagement and consistency</li>
               <li>Excludes anything that has quietly returned to rotation</li>
               <li>Caps each artist per page, so one record cannot swallow the list</li>
               <li>Every score opens up to show exactly how it was reached</li>
-            </ul>
+              </ul>
+            </div>
           </div>
           <div class="shot reveal">
             <img
               src="./screens/02-lost-favorites.png"
-              width="1440"
-              height="940"
+              width="2360"
+              height="1640"
               loading="lazy"
               alt="The Lost Favorites screen, listing dormant tracks with their scores and filter chips."
             />
           </div>
-        </div>
-
-        <div class="feature-row reverse">
-          <div class="feature-copy reveal">
-            <p class="eyebrow">Eras</p>
-            <h3>A listening life changes in stretches.</h3>
-            <p>
-              Each month becomes a distribution over artists. Where that distribution genuinely
-              shifts — and stays shifted — an era begins. One unusual week does not count.
-            </p>
-            <ul class="feature-list">
+        </article>
+        <article class="feature">
+          <div class="feature-head reveal">
+            <div class="feature-title">
+              <p class="eyebrow">Eras</p>
+              <h3>A listening life changes in stretches.</h3>
+            </div>
+            <div class="feature-body">
+              <p>
+                Each month becomes a distribution over artists. Where that distribution genuinely shifts — and stays shifted — an era begins. One unusual week does not count.
+              </p>
+              <ul class="feature-list">
               <li>Compared by direction, so a quiet month and a heavy one can be the same era</li>
               <li>Boundaries scored against three months either side, not the next one</li>
               <li>Named after who you actually played — never an invented genre</li>
               <li>Rename any era; the generated name is kept and can be restored</li>
-            </ul>
+              </ul>
+            </div>
           </div>
           <div class="shot reveal">
             <img
               src="./screens/04-eras.png"
-              width="1440"
-              height="940"
+              width="2360"
+              height="1640"
               loading="lazy"
               alt="The Eras screen, showing a timeline of listening eras with their dominant artists and top tracks."
             />
           </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="feature-copy reveal">
-            <p class="eyebrow">Calendar &amp; clock</p>
-            <h3>Every day you listened to something.</h3>
-            <p>
-              Years of listening as a single heatmap, and the shape of an ordinary day beside it.
-              Click any square to see exactly what was playing.
-            </p>
-            <ul class="feature-list">
+        </article>
+        <article class="feature">
+          <div class="feature-head reveal">
+            <div class="feature-title">
+              <p class="eyebrow">Calendar &amp; clock</p>
+              <h3>Every day you listened to something.</h3>
+            </div>
+            <div class="feature-body">
+              <p>
+                Years of listening as a single heatmap, and the shape of an ordinary day beside it. Click any square to see exactly what was playing.
+              </p>
+              <ul class="feature-list">
               <li>Local time, computed at import — late night means midnight where you were</li>
               <li>Peak hour, dayparts, weekdays against weekends</li>
               <li>Sessions derived from gaps in playback, with variety and repeat counts</li>
-            </ul>
+              </ul>
+            </div>
           </div>
           <div class="shot reveal">
             <img
               src="./screens/08-calendar.png"
-              width="1440"
-              height="940"
+              width="2360"
+              height="1640"
               loading="lazy"
               alt="The Calendar screen, showing a multi-year listening heatmap above a radial 24-hour listening clock."
             />
           </div>
-        </div>
+        </article>
       </div>
     </section>
 

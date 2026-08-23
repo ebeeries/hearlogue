@@ -109,6 +109,9 @@ npm run dev        # start the app with hot reload
 # Capture a screenshot of every screen into tests/e2e/.artifacts/screens
 E2E_SCREENSHOTS=1 npx playwright test screenshots
 
+# Regenerate the landing-page screenshots in site/screens (2x, from the real app)
+E2E_SITE_SHOTS=1 npx playwright test site-shots
+
 # Import a million synthetic events and assert every screen stays fast
 HEARLOGUE_PERF=1 npx vitest run tests/integration/performance.test.ts
 ```
